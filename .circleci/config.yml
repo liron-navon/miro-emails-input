@@ -2,7 +2,7 @@ jobs:
   build:
     executor:
       name: node/default
-      tag: '14.15.3'
+      tag: '15.4.0'
     steps:
       - checkout
       - node/with-cache:
