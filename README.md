@@ -1,7 +1,7 @@
 # Emails Input
 
 Demo
-https://liron-navon.github.io/miro-emails-input
+https://liron-navon.github.io/miro-emails-input/index.html
 
 
 ### Testing
