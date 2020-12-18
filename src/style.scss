@@ -1,0 +1,88 @@
+/**
+    Style is written in BEM format, to provide easy structure,
+    simple encapsulation, and easy to override with plain css.
+
+    I didn't include the font family and decided to use REM here
+    to make the library easily extendable and accessible
+ */
+
+.emails-input {
+    font-size: 0.875rem; // 14px
+
+    &__container {
+        border: 1px solid lightgray;
+        background-color: white;
+        overflow: scroll;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: wrap;
+        padding: 5px;
+    }
+
+    &__email {
+        padding: 5px 8px 5px 10px;
+        margin: 2px 2px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__input {
+        padding: 5px 8px 5px 10px;
+        margin: 2px 2px;
+        border: none;
+        outline: none;
+        flex-grow: 1;
+    }
+
+    &__valid_email {
+        background-color: #E2EAFC;
+    }
+
+    &__invalid_email {
+        background-color: white;
+        border-bottom: 1px red dashed;
+        border-radius: 0;
+    }
+
+    // This is the X icon used for the email boxes
+    &__x {
+        margin-left: 10px;
+        position: relative;
+        height: 0.625rem;
+        width: 0.625rem;
+        display: inline-block;
+        padding: 0;
+        border: none;
+        background: none;
+        outline: none;
+        cursor: pointer;
+
+        &:before, &:after {
+            position: absolute;
+            left: 50%;
+            content: ' ';
+            height: 100%;
+            width: 1px;
+            top: 1px;
+            background-color: black;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+
+        &:hover:before, &:hover:after {
+            transition: background-color 0.32s ease-in-out;
+            background-color: grey;
+        }
+    }
+}

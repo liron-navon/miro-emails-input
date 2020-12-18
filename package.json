@@ -1,0 +1,36 @@
+{
+  "name": "emails-input",
+  "version": "1.0.0",
+  "description": "a library for an emails input component",
+  "main": "dist/emails-input.js",
+  "scripts": {
+    "build": "parcel build src/emails-input.ts --global EmailsInput --out-file emails-input.js",
+    "dev": "parcel serve src/index.html --global EmailsInput",
+    "test": "jest --verbose ./src",
+    "prebuild": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liron-navon/emails-input.git"
+  },
+  "keywords": [
+    "emails",
+    "input",
+    "emails-input"
+  ],
+  "author": "liron-navon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liron-navon/emails-input/issues"
+  },
+  "homepage": "https://github.com/liron-navon/emails-input#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.14",
+    "jest": "^26.6.3",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.30.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  }
+}

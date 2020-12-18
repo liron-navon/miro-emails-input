@@ -1,0 +1,126 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Miro emails input example</title>
+    <meta name="description" content="Miro emails input example">
+    <meta name="author" content="Liron Navon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+        :root {
+            --main-container-max-width: 540px;
+            --main-content-max-width: 440px;
+        }
+
+        html {
+            font-size: 100%;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .btn {
+            background: #4467F5;
+            color: white;
+            padding: 10px 16px;
+            border: gainsboro;
+            border-radius: 6px;
+            margin: 8px 0;
+        }
+
+        .btn:first-child {
+            margin-right: 16px;
+        }
+
+        .buttons-container {
+            display: flex;
+            padding: 24px 24px 32px;
+            flex-wrap: wrap;
+            max-width: var(--main-content-max-width);
+            margin: auto;
+        }
+
+        .main-content {
+            max-width: var(--main-container-max-width);
+            margin: 50px auto auto auto;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .content-container {
+            padding: 24px;
+            background: #F8F8F7;
+        }
+
+        .page-title {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.25rem;
+            margin: auto;
+            font-weight: 400;
+            padding: 8px 0 24px 0px;
+            max-width: var(--main-content-max-width);
+        }
+        .bold-font {
+            font-weight: 700;
+        }
+
+        .emails-input-root {
+            height: 96px;
+            max-width: var(--main-content-max-width);
+            margin: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<main class="main-content">
+    <div class="content-container">
+        <h1 class="page-title">Share <strong class="bold-font">Board name</strong> with others</h1>
+        <div class="emails-input-root" id="emails-input"></div>
+    </div>
+    <div class="buttons-container">
+        <button class="btn" id="add-email-btn">Add email</button>
+        <button class="btn" id="get-email-count-btn">Get email count</button>
+    </div>
+</main>
+
+
+<script src="emails-input.ts"></script>
+<script>
+    /*
+    The example showed "EmailsInput(inputContainerNode, ...)"
+    so I thought it would be nice to add some options to this library where the three dots are ('...')
+    of course it can be used without passing any options, like:
+
+    var emailsInput = EmailsInput(inputContainerNode)
+    */
+    var inputContainerNode = document.querySelector('#emails-input');
+
+    var emailsInput = EmailsInput(inputContainerNode, {
+        placeHolder: 'add more people...',
+        initialEmails: [
+            'john@miro.com',
+            'invalid.email',
+            'mike@miro.com',
+            'alexander@miro.com'
+        ]
+    });
+
+    const getEmailCountBtn = document.querySelector('#get-email-count-btn');
+    getEmailCountBtn.addEventListener('click', () => {
+        alert(`you have ${emailsInput.getEmails().length} email addresses`);
+    });
+
+    const addEmailBtn = document.querySelector('#add-email-btn');
+    addEmailBtn.addEventListener('click', () => {
+        const randomName = Math.random().toString(36).substring(5, 12);
+        emailsInput.addEmail(`${randomName}@miro.com`);
+    });
+</script>
+
+</body>
+</html>
