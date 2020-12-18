@@ -1,5 +1,7 @@
 # Emails Input
 
+[![liron-navon](https://circleci.com/gh/liron-navon/miro-emails-input.svg?style=shield)](https://github.com/liron-navon/miro-emails-input)
+
 Demo
 https://liron-navon.github.io/miro-emails-input/index.html
 
