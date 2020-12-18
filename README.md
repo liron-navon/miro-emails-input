@@ -39,4 +39,5 @@ We use jest to run the tests, simply run `$ yarn test`
 
 ### Building
 To run the development server locally run `$ yarn dev`
+
 To build the production version for the library call `$ yarn build`
