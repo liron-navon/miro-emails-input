@@ -3,10 +3,6 @@
 Demo
 https://liron-navon.github.io/miro-emails-input/index.html
 
-
-### Testing
-We use jest to run the tests, simply run `$ yarn test`
-
 ### How to use
 Start by importing the library and the stylesheet
 
@@ -37,3 +33,10 @@ A method that returns the list of strings as readable text (does not differentia
 
 ##### addEmail ((string) => HTMLDivElement)
 A method that accepts a string (the email) and returns a div element that is the dom node for the email
+
+### Testing
+We use jest to run the tests, simply run `$ yarn test`
+
+### Building
+To run the development server locally run `$ yarn dev`
+To build the production version for the library call `$ yarn build`
